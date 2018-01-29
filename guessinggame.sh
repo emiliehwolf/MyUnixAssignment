@@ -17,8 +17,10 @@ echo "Guess how many files are in the current directory."
 read guess
 count=1
 
+# Use pipe operator to find the wordcount, excluding directories, from the list command
 files=$( ls -p | grep -v / | wc -w )
 
+# While the user's guess is not equal to the number of files, keep guessing
 while [[ $guess -ne $files ]]
 do
 	if [[ $guess -lt $files ]]
@@ -29,6 +31,8 @@ do
 	fi
 	
 	read guess
+
+	# This is counting the number of guesses
 	let count=$count+1
 done
 
@@ -36,4 +40,5 @@ echo "Congrats! You guessed correctly!"
 echo "Number of attempts: $count"
 }
 
+# Call the function to play. 
 guessinggame
