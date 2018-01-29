@@ -9,6 +9,8 @@
 # Once the user guesses the correct number of files in the current directory 
 # they should be congratulated.
 
+function guessinggame {
+
 echo "Let's play a game!"
 echo "Guess how many files are in the current directory."
 
@@ -30,5 +32,8 @@ do
 	let count=$count+1
 done
 
-echo "Congrats! You guess correctly."
-echo "And it only took you $count tries."
+echo "Congrats! You guessed correctly!"
+echo "Number of attempts: $count"
+}
+
+guessinggame
